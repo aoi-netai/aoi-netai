@@ -110,11 +110,3 @@
 > [MITlicense](https://opensource.org/license/mit)
 >
 > 使用報告をくれたら私がうれしいです
-
-## いろいろ
-
-・あんまりにもえげつないバグが出てしまったら連絡ください
-
-（コードの修正ができることを期待しないでください）
-
-https://x.com/Sezaki_aoi
