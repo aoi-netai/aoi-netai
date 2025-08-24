@@ -20,10 +20,10 @@
 
 ### FC(フライトコントローラー)
 
-> 大会に出す予定があるので、しばらくPrivateにしてるかも
-
 ・[PFlight](https://github.com/NOKOLat/PFLIGHT) 
-> マルチコプターのFCのP(ぽんこつ）Flightです。現在開発中
+
+> 2025年度飛行ロボットコンテスト出場
+> 純粋な飛行だけなら十分こなせます
 
 <details>
 
