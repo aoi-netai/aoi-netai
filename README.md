@@ -45,8 +45,14 @@
   
   > 高精度の6軸センサー
   > - 実行環境: STM32 HALライブラリ + Arudino Wireライブラリ(I2C）
-  > - 通信形式: I2C(~1Mbps) / SPI(~24Mbps) 
+  > - 通信形式: I2C(~1Mbps) / SPI(~24Mbps)
 
+  ・[STM32_DPS368](https://github.com/aoi-netai/DPS368_MyLib)
+  
+  > - 一般的な気圧センサー
+  > - 実行環境: STM32 HALライブラリ
+  > - 通信形式: I2C(~400kbps)
+  > - デバック中です！終わり次第Readmeを書きます
 </details>
 
 ### データ処理
