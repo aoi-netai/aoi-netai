@@ -55,12 +55,17 @@
   > - デバック中です！終わり次第Readmeを書きます
 </details>
 
-### データ処理
+### データ処理や制御など
 
 ・[ComplementaryFilter](https://github.com/NOKOLat/ComplementaryFilter)
 
-> 一般的な相補フィルタ
+> - 一般的な相補フィルタ
 > - 加速度のノルムを使うことで、急な移動に少し対応
+
+・[PFLIGHT_PID](https://github.com/NOKOLat/2025_PFLIGHT_PID)
+
+> - 一般的な1軸PID制御
+> - PFLIGHTで使用したもの
 
 ### 謎のツールたち
 
