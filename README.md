@@ -25,31 +25,29 @@
 ・[PFlight](https://github.com/NOKOLat/PFLIGHT) 
 > マルチコプターのFCのP(ぽんこつ）Flightです。現在開発中
 
-### センサー
+<details>
 
-・[STM32_BM1422AGV](https://github.com/NOKOLat/STM32_BM1422AGMV) 
+<summary><h3>センサーライブラリ</h3></summary>
 
-> 精度のいい3軸地磁気センサー
-> 
-> - 実行環境: STM32 HALライブラリ
->
-> - 通信形式: I2C(~400kbps)
+  ・[STM32_BM1422AGV](https://github.com/NOKOLat/STM32_BM1422AGMV) 
+  
+  > 精度のいい3軸地磁気センサー
+  > - 実行環境: STM32 HALライブラリ
+  > - 通信形式: I2C(~400kbps)
+  
+  ・[STM32_ICM45686](https://github.com/NOKOLat/STM32_ICM45686)
+  
+  > 低電力の6軸センサー
+  > - 実行環境: STM32 HALライブラリ
+  > - 通信形式: I2C(~1Mbps) / SPI(~24Mbps)
+  
+  ・[STM32_ICM42688P](https://github.com/NOKOLat/STM32_ICM42688P)
+  
+  > 高精度の6軸センサー
+  > - 実行環境: STM32 HALライブラリ + Arudino Wireライブラリ(I2C）
+  > - 通信形式: I2C(~1Mbps) / SPI(~24Mbps) 
 
-・[STM32_ICM45686](https://github.com/NOKOLat/STM32_ICM45686)
-
-> 低電力の6軸センサー
-> 
-> - 実行環境: STM32 HALライブラリ
->
-> - 通信形式: I2C(~1Mbps) / SPI(~24Mbps)
-
-・[STM32_ICM42688P](https://github.com/NOKOLat/STM32_ICM42688P)
-
-> 高精度の6軸センサー
-> 
-> - 実行環境: STM32 HALライブラリ
->
-> - 通信形式: I2C(~1Mbps) / SPI(~24Mbps)
+</details>
 
 ### データ処理
 
@@ -63,7 +61,6 @@
 ・[python_SBUS_Generator](https://github.com/aoi-256/SBUS_Generator)
 
 > PythonでSBUSを送信する装置です
-> 
 > - UARTとして受信するため反転処理をしてあります
 
 
