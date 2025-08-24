@@ -38,7 +38,7 @@
   ・[STM32_ICM45686](https://github.com/NOKOLat/STM32_ICM45686)
   
   > 低電力の6軸センサー
-  > - 実行環境: STM32 HALライブラリ
+  > - 実行環境: STM32 HALライブラリ　+ Arudino Wireライブラリ(I2C）
   > - 通信形式: I2C(~1Mbps) / SPI(~24Mbps)
   
   ・[STM32_ICM42688P](https://github.com/NOKOLat/STM32_ICM42688P)
