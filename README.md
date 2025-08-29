@@ -94,7 +94,7 @@
 > - <Wifi.h>のsoftAPを使ったデバック用のコードセットです
 > - PC側の受信コード(python)も付属しています
 
-・[ESP32_StateDev](https://github.com/aoi-256/ESP32_StateDev) 
+・[ESP32_StateDev](https://github.com/aoi-netai/ESP32_StatePattern_Sample)
 
 > - Stateパターンのクラスサンプルです
 > - 割と詳細に処理の流れが書いてあります
