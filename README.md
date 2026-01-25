@@ -47,9 +47,6 @@
 
 **詳細:** [SensorProgram.md](./Sensor/SensorProgram.md)
 
-<a href="https://product.tdk.com/ja/search/sensor/mortion-inertial/imu/info?part_no=ICM-42688-P"><img src="https://product.tdk.com/system/files/dam/img/product/sensor/mortion-inertial/imu/074001_icm-42688-p_pi0401.png" width="200" alt="ICM42688P"></a>
-<a href="[https://www.dfrobot.com/product-2891.html?gad_source=1&gad_campaignid=23441885436&gbraid=0AAAAADucPlCJCf99Ttc0EGwhXCgyuXm-2&gclid=EAIaIQobChMIlISuk86lkgMVn3oPAh21yy15EAAYASAAEgJiqfD_BwE]"><img src="https://dfimg.dfrobot.com/enshop/SEN0622/SEN0622_Main_01_150x100.jpg.webp" width="200" alt="BMM350"></a>
-
 ---
 
 ### 姿勢推定関係
