@@ -3,6 +3,7 @@
 - そこら辺に生えてる学部生です
 - C++の比較的低レイヤー向けの実装を書いています
 - クラス設計たのしい
+- 最近C++17と仲良くなりつつある
 
 ## 所属先
 
@@ -20,105 +21,133 @@
 
 <img alt="my skills" src="https://skillicons.dev/icons?theme=dark&perline=7&i=python,lua,html,react" />
 
-## 作成したプログラム
+### 大きめのプロジェクト
 
-### FC(フライトコントローラー)
+#### 1. PFLIGHT - フライトコントローラー
 
-・[PFlight](https://github.com/NOKOLat/PFLIGHT) 
+**リポジトリ:** [PFLIGHT](https://github.com/NOKOLat/PFLIGHT)
 
-> 2025年度飛行ロボットコンテスト出場
-> 純粋な飛行だけなら十分こなせます
+- 4発 or 8発向けのドローンのフライトコントローラー
+- ヨー軸の推定に少し課題がありますが、通常飛行ならこなせます
+- 少し古いコードなので実装が微妙なところが多め
 
-<details>
+<img src="./img/pflight_01.jpg" width="500" alt="ドローン">
 
-<summary><h3>センサーライブラリ</h3></summary>
+#### 2. PFLIGHT2 - 模型飛行機用フライトコントローラー
 
-  ・[STM32_BM1422AGV](https://github.com/NOKOLat/STM32_BM1422AGMV) 
-  
-  > 精度のいい3軸地磁気センサー
-  > - 実行環境: STM32 HALライブラリ
-  > - 通信形式: I2C(~400kbps)
-  
-  ・[STM32_ICM45686](https://github.com/NOKOLat/STM32_ICM45686)
-  
-  > 低電力の6軸センサー
-  > - 実行環境: STM32 HALライブラリ　+ Arudino Wireライブラリ(I2C）
-  > - 通信形式: I2C(~1Mbps) / SPI(~24Mbps)
-  
-  ・[STM32_ICM42688P](https://github.com/NOKOLat/STM32_ICM42688P)
-  
-  > 高精度の6軸センサー
-  > - 実行環境: STM32 HALライブラリ + Arudino Wireライブラリ(I2C）
-  > - 通信形式: I2C(~1Mbps) / SPI(~24Mbps)
+- 双発模型飛行機の自動操縦を開発中
+- ROS2を使ったLiDAR開発に挑戦予定
+---
 
-  ・[STM32_DPS368](https://github.com/aoi-netai/DPS368_MyLib)
-  
-  > - 一般的な気圧センサー
-  > - 実行環境: STM32 HALライブラリ
-  > - 通信形式: I2C(~400kbps)
-  > - デバック中です！終わり次第Readmeを書きます
-</details>
+### センサー関係
 
-### データ処理や制御など
+- STM32 HAL向けの実装がほとんどないので自作しています
+- IMU、地磁気、気圧、ToF、温度センサーのライブラリや実装サンプルを公開しています
+- 数が多いので、リンク先にまとめてあります
 
-・[ComplementaryFilter](https://github.com/NOKOLat/ComplementaryFilter)
+**詳細:** [SensorProgram.md](./Sensor/SensorProgram.md)
 
-> - 一般的な相補フィルタ
-> - 加速度のノルムを使うことで、急な移動に少し対応
+<a href="https://product.tdk.com/ja/search/sensor/mortion-inertial/imu/info?part_no=ICM-42688-P"><img src="https://product.tdk.com/system/files/dam/img/product/sensor/mortion-inertial/imu/074001_icm-42688-p_pi0401.png" width="200" alt="ICM42688P"></a>
+<a href="[https://www.dfrobot.com/product-2891.html?gad_source=1&gad_campaignid=23441885436&gbraid=0AAAAADucPlCJCf99Ttc0EGwhXCgyuXm-2&gclid=EAIaIQobChMIlISuk86lkgMVn3oPAh21yy15EAAYASAAEgJiqfD_BwE]"><img src="https://dfimg.dfrobot.com/enshop/SEN0622/SEN0622_Main_01_150x100.jpg.webp" width="200" alt="BMM350"></a>
 
-・[PFLIGHT_PID](https://github.com/NOKOLat/2025_PFLIGHT_PID)
+---
 
-> - 一般的な1軸PID制御
-> - PFLIGHTで使用したもの
+### 姿勢推定関係
 
-### 謎のツールたち
+- アルゴリズムは苦手なので、外部の方が実装したものの実装をメインに書いています
 
-・[python_SBUS_Generator](https://github.com/aoi-256/SBUS_Generator)
+#### 1. ComplementaryFilter - 相補フィルタ
 
-> PythonでSBUSを送信する装置です
-> - UARTとして受信するため反転処理をしてあります
+**リポジトリ:** [ComplementaryFilter](https://github.com/NOKOLat/ComplementaryFilter)
 
+- 一般的な相補フィルタの実装
+- 加速度のノルムを使うことで、急な移動に少し対応
 
-### ドキュメント
+#### 2. Tellicious InertialEstimators - EKF
 
-・[STM32](https://aoi-256.github.io/STM32_DEV/)
+**リポジトリ:** [Tellicious InertialEstimators EKF](https://github.com/NOKOLat/Tellicious_InertialEstimators_EKF)
 
-> 所属しているサークルの引継ぎ用です
+- 開発でよく使わせていただいているTelliciousさんのEKFライブラリのサンプルコードです
+- 素晴らしいライブラリなので、もうちょっと有名になってほしい気持ち
 
-・[STM32_React](https://github.com/aoi-256/STM32_document_React)
+### 🔧 設計例
 
-> React + TsとGASを使用して自動進捗管理機能を付ける（開発中）
+- 組み込み向けの設計例を作成したので、公開しています
+- std::unique_ptrやstd::optionalを使った低レイヤー向けの（ちょっと）モダンC++を使用しています
 
-<details>
+#### 1. ESP32_StatePattern_Sample
 
-<summary><h3>ESP32のツールなど</h3></summary>
+**リポジトリ:** [ESP32_StatePattern_Sample](https://github.com/aoi-netai/ESP32_StatePattern_Sample)
 
-・[ESP32_SoftAP_Utility](https://github.com/aoi-256/Arudino_SoftAP_Utility) 
+- Stateパターンのクラスサンプル
+- VSCodeのplatformIOなどを使用して実行
 
-> - <Wifi.h>のsoftAPを使ったデバック用のコードセットです
-> - PC側の受信コード(python)も付属しています
+#### 2. ROS2_StateMachine_Sample - ROS2の状態機械
 
-・[ESP32_StateDev](https://github.com/aoi-netai/ESP32_StatePattern_Sample)
+**リポジトリ:** [ros2_state_machine_sample](https://github.com/aoi-netai/ros2_state_machine_sample)
 
-> - Stateパターンのクラスサンプルです
-> - 割と詳細に処理の流れが書いてあります
-> - vscodeのplatformIOなどを使用して実行してください
+- ESP32_StatePattern_SampleのROS2版
+- LoggerのインスタンスをContextで共有する実装のほうがよさそう
 
-</details>
+---
 
-### その他
-・[STM32_F446_Register](https://github.com/aoi-256/STM32_F446_Register)
-> レジスタ縛りSTM32の記録（勉強用）
+### 📚 ドキュメント
 
+- 後輩への引継ぎ用に作成したドキュメントを公開しています
+- STM32を触る人が増えてくれたらうれしいです
+
+#### 1. STM32 初心者向けドキュメント(2025年度)
+
+**URL:** [STM32 DEV Documentation](https://aoi-256.github.io/STM32_DEV/)
+
+- 所属しているサークルの引継ぎ用ドキュメント
+- STM32のLチカからセンサーライブラリの作成までを解説
+
+<img src="./img/2025_STM32_docs.png" width="500" alt="2025_STM32_docs">
+
+#### 2. STM32 初心者向けドキュメント（2026年度）
+
+**URL:** [STM32_document_React](https://nokolat.github.io/2026_STM32_Document/)
+
+- React + TypeScript + SQLで作成した管理機能付きドキュメント
+- ユーザーごとの進捗管理、Discordへの通知を自動でやってくれます
+- Web系は更新が速いので、かなり古いバージョンの実装になっていそう
+- 現状はサークル内部にのみ公開
+
+<img src="./img/2026_STM32_docs.png" width="500" alt="2026_STM32_docs">
+
+### その他のツール
+
+#### 1. SBUS_Generator
+
+**リポジトリ:** [SBUS_Generator](https://github.com/aoi-netai/SBUS_Generator)
+
+- PythonでSBUS信号を生成・送信するツール
+- 受信機からくるデータを反転処理したものを出力可能
+
+#### 2. ESP32_P2P_Utility
+
+**リポジトリ:** [ESP32_P2P_Utility](https://github.com/aoi-netai/ESP32_P2P_Utility)
+
+- ESP32のP2P通信ユーティリティ
+- ワイヤレス通信の実装サンプル
+
+#### 3. STM32_Motor-Servo_Driver
+
+**リポジトリ:** [STM32_Motor-Servo_Driver](https://github.com/NOKOLat/STM32_Motor-Servo_Driver)
+
+- STM32向けのモーター・サーボドライバライブラリ
+- PWM制御による速度・角度制御
+
+#### 4. 1DoF_PID - PID制御
+
+**リポジトリ:** [PFLIGHT_PID](https://github.com/NOKOLat/2025_PFLIGHT_PID)
+
+- 一般的な1軸PID制御
+- シンプソン公式を利用したので、積分精度が少しいいかも
 
 ## 使用について
 
-- Readmeやlicenseに記載がない限りMITライセンスを採用しています
->
-> 商用、非商用に問わず改変や再配布などは自由ですので、適当に使ってください
->
-> ただし、一切の責任は取りません
->
-> [MITlicense](https://opensource.org/license/mit)
->
-> 使用報告をくれたら私がうれしいです
+- リポジトリに記載がない場合は、MITライセンスで公開しています
+- 商用利用、改変、再配布など自由に行っていただいて構いません
+- 使用報告、issue、PRなどお待ちしております！
