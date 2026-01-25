@@ -45,7 +45,7 @@
 - IMU、地磁気、気圧、ToF、温度センサーのライブラリや実装サンプルを公開しています
 - 数が多いので、リンク先にまとめてあります
 
-**詳細:** [SensorProgram.md](./Sensor/SensorProgram.md)
+**詳細:** [SensorProgram.md](./SensorProgram.md)
 
 ---
 
