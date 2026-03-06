@@ -37,6 +37,11 @@
 
 - 双発模型飛行機の自動操縦を開発中
 - ROS2を使ったLiDAR開発に挑戦予定
+
+**リポジトリ** [Lidar_Mid70](https://github.com/NOKOLat/2026_Hikorobo_Lidar)
+
+- Lidarを静置した状態で、データの取得から動体検知までを記載
+- configは全部yamlにまとめたので、簡単にチューニングができます
 ---
 
 ### センサー関係
