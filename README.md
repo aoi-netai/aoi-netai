@@ -4,6 +4,8 @@
 - STM32、ROS2、点群処理周りをやっています
 - 今年の目標: テストケースをしっかり書く
 
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=aoi-netai&show_icons=true)
+
 ## 所属団体
 
 ### 東京農工大学航空研究開会 (2024~) [NokoLAT](https://github.com/NOKOLat)
