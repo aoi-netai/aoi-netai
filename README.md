@@ -1,10 +1,9 @@
 ## 自己紹介
 
 - そこら辺に生えてる学部生です
+- 9割C++ 残りはTypeScript、Rust、Rubyなどを触っています
 - STM32、ROS2、点群処理周りをやっています
 - 今年の目標: テストケースをしっかり書く
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=aoi-netai&show_icons=true)
 
 ## 所属団体
 
