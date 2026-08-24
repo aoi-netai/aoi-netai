@@ -1,155 +1,49 @@
 ## 自己紹介
 
 - そこら辺に生えてる学部生です
-- C++の比較的低レイヤー向けの実装を書いています
-- クラス設計たのしい
-- 最近C++17と仲良くなりつつある
+- STM32、ROS2、点群処理周りをやっています
+- 今年の目標: テストケースをしっかり書く
 
-## 所属先
+## 所属団体
 
-公開許可を貰っている範囲での記載になります
+### 東京農工大学航空研究開会 (2024~) [NokoLAT](https://github.com/NOKOLat)
+- ドローンのフライトコントローラーや各種センサーの開発を行っています。
 
-- 東京農工大学航空研究開会 (2024~) [NokoLAT](https://github.com/NOKOLat)
+### 株式会社Zrek(2025~) [Zrek](https://www.zrek.org/)
+- ROS2を使ったFAシステムの開発を行っています。
+- 点群処理やROS2のパッケージ開発を担当しています。
 
-## 書いている言語
+### 組み込みエンジニア集会(2026~) [組み込みエンジニア集会](https://vrc-ta-hub.com/community/100/)
+- メタバース上での技術交流会を主催しています。
+- 隔週木曜日21時から開催しています。興味のある方はぜひご参加ください。
 
-ほんのちょっとわかる
+## 趣味の開発
 
-<img alt="my skills" src="https://skillicons.dev/icons?theme=dark&perline=7&i=c,cpp" />
+### ドローンのフライトコントローラー [PFLIGHT](https://github.com/NOKOLat/PFLIGHT2.1)
 
-触ったことあるけど意味不明
+- STM32 HAL環境で開発したフライトコントローラーです。
+- 4発、8発といった基本的なマルチコプターの制御に対応しています。
 
-<img alt="my skills" src="https://skillicons.dev/icons?theme=dark&perline=7&i=python,lua,html,react" />
+<img src="img/pflight_01.jpg" width="300" height="200">
 
-### 大きめのプロジェクト
+### 組み込み学習サイト [STM32_Document](https://github.com/NOKOLat/2026_STM32_Document)
 
-#### 1. PFLIGHT - フライトコントローラー
+- STM32の環境構築から始まり、ドローンの作成に必要な知識を学べる教育用サイトです。
+- cloudflare workersを用いた進捗管理を実装しており、低コストで進捗管理ができます。
+- 所属サークルの後輩教育用に作成しました。
 
-**リポジトリ:** [PFLIGHT](https://github.com/NOKOLat/PFLIGHT)
+<img src="img/2026_STM32_docs.png" width="400">
 
-- 4発 or 8発向けのドローンのフライトコントローラー
-- ヨー軸の推定に少し課題がありますが、通常飛行ならこなせます
-- 少し古いコードなので実装が微妙なところが多め
+### 組み込み向けRubyAOTコンパイルエラー [BareRuby](https://github.com/uproad/bareruby-prototype)
 
-<img src="./img/pflight_01.jpg" width="500" alt="ドローン">
+- RubyのコードをC++に変換して組み込み環境で動作させるためのプロジェクトです。
+- 現在はプロトタイプを作成中です
 
-#### 2. PFLIGHT2 - 模型飛行機用フライトコントローラー
+## 技術発表など
 
-- 双発模型飛行機の自動操縦を開発中
-- ROS2を使ったLiDAR開発に挑戦予定
+最近やったLTや技術発表です。
+そのうちブログやSpeeker Deckにまとめる予定です。
 
-**リポジトリ** [Lidar_Mid70](https://github.com/NOKOLat/2026_Hikorobo_Lidar)
+- [3Dカメラとロボットで遊んでみた話](https://vrc-ta-hub.com/event/detail/777/)
 
-- Lidarを静置した状態で、データの取得から動体検知までを記載
-- configは全部yamlにまとめたので、簡単にチューニングができます
----
-
-### センサー関係
-
-- STM32 HAL向けの実装がほとんどないので自作しています
-- IMU、地磁気、気圧、ToF、温度センサーのライブラリや実装サンプルを公開しています
-- 数が多いので、リンク先にまとめてあります
-
-**詳細:** [SensorProgram.md](./SensorProgram.md)
-
----
-
-### 姿勢推定関係
-
-- アルゴリズムは苦手なので、外部の方が作成したものの実装をメインに書いています
-
-#### 1. ComplementaryFilter - 相補フィルタ
-
-**リポジトリ:** [ComplementaryFilter](https://github.com/NOKOLat/ComplementaryFilter)
-
-- 一般的な相補フィルタの実装
-- 加速度のノルムを使うことで、急な移動に少し対応
-
-#### 2. Tellicious InertialEstimators - EKF
-
-**リポジトリ:** [Tellicious InertialEstimators EKF](https://github.com/NOKOLat/Tellicious_InertialEstimators_EKF)
-
-- 開発でよく使わせていただいているTelliciousさんのEKFライブラリのサンプルコードです
-- 素晴らしいライブラリなので、もうちょっと有名になってほしい気持ち
-
-### 🔧 設計例
-
-- 組み込み向けの設計例を作成したので、公開しています
-- std::unique_ptrやstd::optionalを使った低レイヤー向けの（ちょっと）モダンC++を使用しています
-
-#### 1. ESP32_StatePattern_Sample
-
-**リポジトリ:** [ESP32_StatePattern_Sample](https://github.com/aoi-netai/ESP32_StatePattern_Sample)
-
-- Stateパターンのクラスサンプル
-- VSCodeのplatformIOなどを使用して実行
-
-#### 2. ROS2_StateMachine_Sample - ROS2の状態機械
-
-**リポジトリ:** [ros2_state_machine_sample](https://github.com/aoi-netai/ros2_state_machine_sample)
-
-- ESP32_StatePattern_SampleのROS2版
-- LoggerのインスタンスをContextで共有する実装のほうがよさそう
-
----
-
-### 📚 ドキュメント
-
-- 後輩への引継ぎ用に作成したドキュメントを公開しています
-- STM32を触る人が増えてくれたらうれしいです
-
-#### 1. STM32 初心者向けドキュメント(2025年度)
-
-**URL:** [STM32 DEV Documentation](https://aoi-256.github.io/STM32_DEV/)
-
-- 所属しているサークルの引継ぎ用ドキュメント
-- STM32のLチカからセンサーライブラリの作成までを解説
-
-<img src="./img/2025_STM32_docs.png" width="500" alt="2025_STM32_docs">
-
-#### 2. STM32 初心者向けドキュメント（2026年度）
-
-**URL:** [STM32_document_React](https://nokolat.github.io/2026_STM32_Document/)
-
-- React + TypeScript + SQLで作成した管理機能付きドキュメント
-- ユーザーごとの進捗管理、Discordへの通知を自動でやってくれます
-- Web系は更新が速いので、かなり古いバージョンの実装になっていそう
-- 現状はサークル内部にのみ公開
-
-<img src="./img/2026_STM32_docs.png" width="500" alt="2026_STM32_docs">
-
-### その他のツール
-
-#### 1. SBUS_Generator
-
-**リポジトリ:** [SBUS_Generator](https://github.com/aoi-netai/SBUS_Generator)
-
-- PythonでSBUS信号を生成・送信するツール
-- 受信機からくるデータを反転処理したものを出力可能
-
-#### 2. ESP32_P2P_Utility
-
-**リポジトリ:** [ESP32_P2P_Utility](https://github.com/aoi-netai/ESP32_P2P_Utility)
-
-- ESP32のP2P通信ユーティリティ
-- ワイヤレス通信の実装サンプル
-
-#### 3. STM32_Motor-Servo_Driver
-
-**リポジトリ:** [STM32_Motor-Servo_Driver](https://github.com/NOKOLat/STM32_Motor-Servo_Driver)
-
-- STM32向けのモーター・サーボドライバライブラリ
-- PWM制御による速度・角度制御
-
-#### 4. 1DoF_PID - PID制御
-
-**リポジトリ:** [PFLIGHT_PID](https://github.com/NOKOLat/2025_PFLIGHT_PID)
-
-- 一般的な1軸PID制御
-- シンプソン公式を利用したので、積分精度が少しいいかも
-
-## 使用について
-
-- リポジトリに記載がない場合は、MITライセンスで公開しています
-- 商用利用、改変、再配布など自由に行っていただいて構いません
-- 使用報告、issue、PRなどお待ちしております！
+- [STMマイコンで遊んでみよう](https://vrc-ta-hub.com/event/detail/692/)
